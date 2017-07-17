@@ -23,8 +23,9 @@ public class PokerMain {
                 sepInput = sort(sepInput);
                 if(!(validate(sepInput))) {
                     System.out.println("Invalid: " + input);
-                }
-                combine(sepInput);
+                }else{
+						combine(sepInput);
+					 }
             } else {
                 System.out.println("Invalid: " + input);
             }

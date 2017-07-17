@@ -55,12 +55,16 @@ public class Card {
         switch (suitLetter) {
             case "c":
                 val = 1;
+					 break;
             case "d":
                 val = 2;
+					 break;
             case "h":
                 val = 3;
+					 break;
             case "s":
-                val = 4; 
+                val = 4;
+					 break;
         }
         return val;
     }
