@@ -21,6 +21,9 @@ public class PokerMain {
             if(match) {
                 ArrayList<Card> sepInput = seperate(input);
                 sepInput = sort(sepInput);
+                if(!(validate(sepInput))) {
+                    System.out.println("Invalid: " + input);
+                }
                 combine(sepInput);
             } else {
                 System.out.println("Invalid: " + input);
@@ -76,6 +79,17 @@ public class PokerMain {
             }
         }
         return hand;
+    }
+    
+    public static boolean validate (ArrayList<Card> hand) {
+        for(int i = 0; i < hand.size(); i ++) {
+            for(int j = i+1; j < hand.size(); j++) {
+                if(hand.get(i).equals(hand.get(j))) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
         
     public static void combine (ArrayList<Card> hand) {

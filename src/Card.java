@@ -76,7 +76,7 @@ public class Card {
     public int getValueNum() {
         return valueNum;
     }
-    
+
     public int getSuitVal() {
         return suitVal;
     }
@@ -84,4 +84,34 @@ public class Card {
     public String toString() {
         return value+suit;
     }
+    
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 23 * hash + this.suitVal;
+        hash = 23 * hash + this.valueNum;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Card other = (Card) obj;
+        if (this.suitVal != other.suitVal) {
+            return false;
+        }
+        if (this.valueNum != other.valueNum) {
+            return false;
+        }
+        return true;
+    }
+    
 }
